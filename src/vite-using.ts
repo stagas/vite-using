@@ -3,7 +3,7 @@
 import { Plugin } from 'vite'
 
 const idRegexp = /(?:\.d)?\.(?:ts|js|jsx|tsx)$/
-export const ViteUsing = (): Plugin => ({
+export const viteUsing = (): Plugin => ({
   name: 'vite-using',
   enforce: 'pre',
   transform(code, id) {

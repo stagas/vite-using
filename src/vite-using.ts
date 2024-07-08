@@ -17,6 +17,9 @@ export const viteUsing = (): Plugin => ({
 const usingRegex =
   /(?<async>await\s+)?using\s+(?<assignment>(?<name>[\w$]+)\s*=\s*(.+)\s*;?)/g
 const transformUsing = (code: string): string => {
+  // remove single line comments
+  // TODO: proper regexp to remove single/double comments
+  code = code.replaceAll(/\s\/\/.*$/gm, '')
   const matched = [...code.matchAll(usingRegex)].reverse()
   matched.forEach((match) => {
     const { index } = match

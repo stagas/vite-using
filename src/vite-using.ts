@@ -1,8 +1,8 @@
 // credits: https://github.com/ekwoka/vite-plugin-using (MIT)
 
-import { Plugin } from 'vite'
+import type { Plugin } from 'vite'
 
-const idRegexp = /(?:\.d)?\.(?:ts|js|jsx|tsx)$/
+const idRegexp = /(?:\.d)?\.(?:ts|tsx)$/
 export const viteUsing = (): Plugin => ({
   name: 'vite-using',
   enforce: 'pre',
